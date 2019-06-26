@@ -1,4 +1,4 @@
-# TheBookKeeper
+# The Book Keeper
 
 Introduction This is a simple book management web app that is being created using MERN stack:
 
