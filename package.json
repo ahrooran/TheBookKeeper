@@ -1,0 +1,42 @@
+{
+  "name": "TBK",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server/server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "install": "cd client && npm install",
+    "client": "cd client && npm run start",
+    "heroku-postbuild": "cd client && npm i && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "9.0.0",
+    "concurrently": "^4.1.1",
+    "dotenv": "^6.2.0",
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-plugin-flowtype": "^3.11.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mdbreact": "^4.17.0",
+    "mongoose": "^5.6.2",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-expandable-grid": "^1.0.3"
+  },
+  "engines": {
+    "node": "10.8.0"
+  }
+}
