@@ -48,7 +48,11 @@ class Detail extends Component {
       description: book.volumeInfo.description,
       image: book.volumeInfo.imageLinks.thumbnail,
       link: book.volumeInfo.previewLink
-    })
+    }).then(() => {
+      this.setState({
+        books: this.state.books.filter(book => book.id !== bookID)
+      });
+    }).catch(err => console.log(err));
   }
 
 
