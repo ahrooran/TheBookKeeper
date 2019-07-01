@@ -1,0 +1,61 @@
+body{
+scroll-behavior: smooth;
+}
+@keyframes FadeIn {
+    from {
+      background-color: #007BFF;
+    }
+    
+    to {
+      background-color: #e3f2fd;
+    }
+  }
+  
+  .jumbotron {
+      background-color: #007BFF;
+      animation: FadeIn 0.95s ease-in-out forwards;
+      color:black;
+      
+  }
+
+  .list-group {
+    background-color: #007BFF;
+    animation: FadeIn 0.95s ease-in-out forwards;
+    color:black;
+  }
+  .underline { text-decoration: underline; }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-brand>img {
+    padding: 7px 14px;
+  }
+
+  img.bg {
+  
+    min-height: 100%;
+    min-width: 1024px;
+    
+    
+    width: 100%;
+    height: auto;
+    
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  @media screen and (max-width: 1024px) { 
+    img.bg {
+      left: 50%;
+      margin-left: -512px;
+    }
+  }
+
+  
+
+
+
