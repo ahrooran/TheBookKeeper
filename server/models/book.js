@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
@@ -7,8 +6,7 @@ const bookSchema = new Schema({
   author: { type: String, required: true },
   description: String,
   image: { type: String, required: true },
-  link: { type: String, required: true },
-  isbn: {type: Int, required: true },
+  link: { type: String, required: true }
 });
 
 const Book = mongoose.model('Book', bookSchema);

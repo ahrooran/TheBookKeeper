@@ -27,5 +27,5 @@ module.exports = {
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
-  },
+  }
 };
