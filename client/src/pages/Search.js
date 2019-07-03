@@ -9,14 +9,20 @@ import { Input, FormBtn } from "../components/Form";
 import './style.css';
 
 document.body.style = 'background: #e3f2fd;';
-class Detail extends Component {
+class Run extends Component {
   state = {
     books: {},
-    title: ''
+    title: '',
+    author: ''
+    
   };
 
   searchBook = event => {
     event.preventDefault();
+    
+    // API.getAuthors(this.state.author)
+    // .then(results => this.showBooks(results))
+    // .catch(err => console.log(err));
 
     API.getTitles(this.state.title)
     .then(results => this.showBooks(results))
@@ -28,11 +34,16 @@ class Detail extends Component {
   }
 
   showBooks = data => {
-    this.setState({ books: data.data.items });
+    this.setState({ books: data.data.items })
+    // if (this.setState == 0){
+    //   return this.error;
+    // }
+    
   }
 
   componentDidMount() {
     this.setState({ books: {}, title: '' });
+    // this.setState({ books: {}, title: '' });
   }
 
   handleInputChange = event => {
@@ -55,8 +66,21 @@ class Detail extends Component {
     }).catch(err => console.log(err));
   }
 
+  viewBook = url => {
+    window.location = url;
+  }
 
+  // showBooks = data => {
+  //   this.setState({ books: data.data.items });
+  // }
 
+  // searchBook = event => {
+  //   event.preventDefault();
+
+  //   API.getTitles(this.state.title)
+  //   .then(results => this.showBooks(results))
+  //   .catch(err => console.log(err));
+  // }
 
   render() {
     return (
@@ -75,7 +99,7 @@ class Detail extends Component {
                 name='title'
                 value={this.state.title}
                 onChange={this.handleInputChange}
-                placeholder='Book Title'
+                placeholder='type in a book title or author'
               />
               <FormBtn onClick={this.searchBook}>
                 Search
@@ -85,7 +109,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Container>
-            {this.state.books.length ? (
+            {this.state.books.length ?  (
               <List>
                 {this.state.books.map(book => (
                   <ListItem key={book.id}>
@@ -100,6 +124,7 @@ class Detail extends Component {
                         <ViewBtn onClick={() => this.viewBook(book.volumeInfo.previewLink)} />
                       </Col>
                     </Row>
+                    
                     <p>By {book.volumeInfo.authors[0] || "Not provided by Google Books API"}</p>
                     <p className='text-justify'>{book.volumeInfo.description}</p>
                   </ListItem>
@@ -114,4 +139,5 @@ class Detail extends Component {
     );
   }
 }
-export default Detail;
+
+export default Run;

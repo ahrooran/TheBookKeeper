@@ -1,7 +1,7 @@
 body{
 scroll-behavior: smooth;
 }
-@keyframes FadeIn {
+/* @keyframes FadeIn {
     from {
       background-color: #007BFF;
     }
@@ -9,11 +9,11 @@ scroll-behavior: smooth;
     to {
       background-color: #e3f2fd;
     }
-  }
+  } */
   
   .jumbotron {
-      background-color: #007BFF;
-      animation: FadeIn 0.95s ease-in-out forwards;
+      background-color: #e3f2fd;
+      /* animation: FadeIn 0.95s ease-in-out forwards; */
       color:black;
       
   }
