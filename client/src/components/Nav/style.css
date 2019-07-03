@@ -1,0 +1,16 @@
+.navbar-nav{
+    color: black;
+}
+.nav-link-active{
+    background-color:#e3f2fd;
+    letter-spacing: normal;
+}
+
+.red .active a,
+.red .active a:hover {
+    background-color: red;
+}
+.nav-logo {
+    float: left !important;
+    margin: 20px !important;
+  }

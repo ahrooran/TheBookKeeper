@@ -13,12 +13,12 @@ export function TextArea(props) {
     <div className="form-group">
       <textarea className="form-control" rows="20" {...props} />
     </div>
-  );
+  ); 
 }
 
 export function FormBtn(props) {
   return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+    <button {...props} style={{ float: "left", marginBottom: 20 }} className="btn btn-success">
       {props.children}
     </button>
   );
