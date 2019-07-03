@@ -10,6 +10,10 @@ export default {
     return axios.get('/api/books');
   },
 
+  getAuthors: (bookAuthor) => {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=title:${bookAuthor}`);
+  },
+
   getTitles: (bookTitle) => {
     return axios.get(`https://www.googleapis.com/books/v1/volumes?q=title:${bookTitle}`);
   },
